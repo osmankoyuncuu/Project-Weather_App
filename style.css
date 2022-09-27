@@ -6,6 +6,7 @@
 body {
   background-image: linear-gradient(skyblue 80%, white);
   background-repeat: no-repeat;
+  min-width: 300px;
 }
 .container {
   display: flex;
@@ -17,7 +18,7 @@ header {
   margin: 1rem;
   font-size: 2rem;
   color: white;
-  width: 40rem;
+  width: 100%;
   font-weight: bold;
   text-align: center;
 }
@@ -30,9 +31,11 @@ header {
   border: none;
   border-bottom: 2px solid white;
   background-color: skyblue;
+  color: white;
 }
 .weather-input:focus {
   outline: none;
+  caret-color: white;
 }
 .weather-submit {
   background-color: orange;
@@ -52,12 +55,12 @@ header {
 }
 
 .weather {
-  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem;
+  margin-top: 1rem;
 }
 .weather-card {
   background-color: whitesmoke;
@@ -70,7 +73,7 @@ header {
   padding: 30px 20px;
   box-shadow: 2px 2px 10px black;
   font-family: "Roboto Mono", monospace;
-  margin-top: 2rem;
+
   position: relative;
   transition: all 1s;
 }
@@ -109,4 +112,40 @@ footer {
   justify-content: end;
   margin-top: 2rem;
   margin-right: 1rem;
+  background-size: cover;
+}
+::-webkit-input-placeholder {
+  color: white;
+}
+@media screen and (max-width: 655px) {
+  body {
+    background-repeat: repeat;
+  }
+  header {
+    font-size: 1.5rem;
+  }
+  .weather-input {
+    width: 90%;
+  }
+  .weather-submit {
+    margin-top: 1rem;
+  }
+  .weather-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .weather {
+    margin-top: -1rem;
+  }
+  .weather-card {
+    margin-top: 0.5rem;
+  }
+  #alert {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    text-align: center;
+  }
 }

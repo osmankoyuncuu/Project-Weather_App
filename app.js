@@ -12,11 +12,9 @@ const getWeather = async (city) => {
   try {
     const res = await fetch(url);
     if (!res.ok) {
-      console.log("hata var");
     }
     const data = await res.json();
     renderWeather(data);
-    console.log(data);
   } catch (error) {
     console.log(error);
   }
@@ -43,11 +41,13 @@ const renderWeather = (data) => {
         <img src="./img/${weather[0].icon}.png">
         <h4>${weather[0].description}</h4>
         <h2><span>${Math.round(temp)}</span><sup>°C</sup></h2>
-        <h4>${Math.round(temp_min)}°C/${Math.round(temp_max)}°C</h4>
+        <h4><i class="fa-solid fa-arrow-down"></i>${Math.round(
+          temp_min
+        )}°C/${Math.round(temp_max)}°C<i class="fa-solid fa-arrow-up"></i></h4>
         <h4><i class="fa-solid fa-cloud"></i> Clouds: %${all}</h4>
         <h4><i class="fa-solid fa-temperature-three-quarters"></i> Feels Like: ${Math.round(
           feels_like
-        )} °C</h4>
+        )}°C</h4>
         <h4><i class="fa-solid fa-wind"></i> Wind Speed: ${speed} Km/h</h4>
         
     </div>
@@ -60,11 +60,10 @@ window.addEventListener("load", () => {
 });
 //? onclick
 
-weatherSubmit.addEventListener("click", () => {
+weatherSubmit.addEventListener("click", (e) => {
   if (!weatherInput.value) {
     let timer = 0;
     const intervalId = setInterval(() => {
-      console.log(timer);
       timer++;
       if (timer > 2) {
         clearInterval(intervalId);
@@ -74,10 +73,8 @@ weatherSubmit.addEventListener("click", () => {
     alertDiv.innerHTML = `
 Please enter a city name `;
   } else if (cityArr.includes(weatherInput.value.toLocaleLowerCase())) {
-    console.log("girdi");
     let timer = 0;
     const intervalId = setInterval(() => {
-      console.log(timer);
       timer++;
       if (timer > 2) {
         clearInterval(intervalId);
@@ -93,7 +90,6 @@ You already know the weather for ${weatherInput.value.toLocaleUpperCase()}, Plea
     );
     cityArr.push(weatherInput.value.toLocaleLowerCase());
     weatherInput.value = "";
-    console.log(cityArr);
   }
 });
 //?keydown
