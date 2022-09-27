@@ -46,13 +46,13 @@ header {
   margin-left: 1rem;
 }
 #alert {
-  color: red;
-  margin-top: 0.5rem;
-  font-size: 1.7rem;
+  color: white;
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 .weather {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,12 +64,18 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 300px;
+  width: 270px;
   height: 450px;
   border-radius: 20px;
   padding: 30px 20px;
   box-shadow: 2px 2px 10px black;
   font-family: "Roboto Mono", monospace;
+  margin-top: 2rem;
+  position: relative;
+  transition: all 1s;
+}
+.weather-card:hover {
+  transform: scale(105%);
 }
 .weather-card #country {
   background-color: orange;
@@ -81,6 +87,12 @@ header {
 .weather-card h5 {
   font-size: 2rem;
 }
+.weather-card h5 sup {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding-left: 4px;
+}
 .weather-card h2 span {
   font-size: 4rem;
   font-weight: 600;
@@ -88,6 +100,9 @@ header {
 .weather-card h2 sup {
   font-size: 2.3rem;
   font-weight: 400;
+}
+.content {
+  text-align: center;
 }
 footer {
   display: flex;
