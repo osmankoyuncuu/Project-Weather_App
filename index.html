@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Weather App</h1>
+      </header>
+      <div>
+        <input
+          type="text"
+          class="weather-input"
+          placeholder="Search for a city "
+        />
+        <input type="submit" class="weather-submit" value="Submit" />
+      </div>
+      <p id="alert"></p>
+      <main>
+        <div>
+          <div class="weather" id="weather"></div>
+        </div>
+      </main>
+    </div>
+    <footer>
+      <p>Made with by Osman</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
